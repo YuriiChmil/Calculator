@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+
+  php-fpm:
+    build:
+      context: .
+      dockerfile: php-fpm.Dockerfile
+    environment:
+      TERMINAL_EMULATOR: JetBrains-JediTerm
+    image: refactor-php-fpm
+    hostname: refactor-php-fpm
+    container_name: refactor-php-fpm
+    volumes:
+      - "./code:/code"
+    restart: always
